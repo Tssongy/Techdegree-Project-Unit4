@@ -77,13 +77,15 @@ class Game{
         const message = document.getElementById('game-over-message');
         if(isWon){
             message.textContent = 'Congratulations, You Won!';
+            $overlay.removeClass('lost');
             $overlay.addClass('won');
             $overlay.fadeIn('slow');
             
         }
         else{
             message.textContent = 'Bad luck, Try Again!';
-            $overlay.addClass('lost')
+            $overlay.removeClass('won');
+            $overlay.addClass('lost');
             $overlay.fadeIn('slow');
         }
         this.missed = 0;
