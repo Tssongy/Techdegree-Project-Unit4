@@ -1,0 +1,2 @@
+fade in and out the overlay element
+changed background color of the document
