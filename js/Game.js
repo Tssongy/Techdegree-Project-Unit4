@@ -73,13 +73,18 @@ class Game{
     }
 
     gameOver(isWon){
-        $overlay.fadeIn('slow');
+        
         const message = document.getElementById('game-over-message');
         if(isWon){
-            message.textContent = 'Congratulations, You Won!';  
+            message.textContent = 'Congratulations, You Won!';
+            $overlay.addClass('won');
+            $overlay.fadeIn('slow');
+            
         }
         else{
             message.textContent = 'Bad luck, Try Again!';
+            $overlay.addClass('lost')
+            $overlay.fadeIn('slow');
         }
         this.missed = 0;
     }

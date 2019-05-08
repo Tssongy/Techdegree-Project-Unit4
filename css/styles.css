@@ -177,6 +177,14 @@ button {
   border-radius: 5px;
 }
 
+.won{
+  background: linear-gradient(Blue, Green);
+}
+
+.lost{
+  background: linear-gradient(black, white);
+}
+
 .title {
   color: #FFF;
 }
