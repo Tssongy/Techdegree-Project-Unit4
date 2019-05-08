@@ -10,11 +10,11 @@ class Game{
     constructor(){
         this.missed = 0;
         this.phrases = [
-            'Ladder',
-            'Tomorrow',
-            'Kangaroo',
-            'Toy',
-            'England'
+            'Beat around the bush',
+            'A piece of cake',
+            'Eureka',
+            'Barking up the wrong tree',
+            'No stones unturned'
         ];
         this.activePhrase = null;
     }

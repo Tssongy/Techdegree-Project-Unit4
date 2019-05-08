@@ -14,7 +14,7 @@
         for (let i = 0; i < this.phrase.length; i++){
             const li = document.createElement('li');
              li.textContent = this.phrase[i];
-             if(phrase[i] === ' '){
+             if(this.phrase[i] === ' '){
                 li.className = 'space';
              }
              else{
