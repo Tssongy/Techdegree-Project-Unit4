@@ -27,17 +27,18 @@ class Game{
         $hearts.attr('src', 'images/liveHeart.png');
         $keyButtons.removeAttr('disabled');
         $keyButtons.removeClass();
+        //Remove the click event listener from the previous game
         $keyButtons.off();
         $overlay.fadeOut('slow');
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
     }
-
+    // Grab a random phrase from the phrases array
     getRandomPhrase(){
         const randomIndex = Math.floor((Math.random()*this.phrases.length));
         return new Phrase(this.phrases[randomIndex]);
     }
-
+    //Check if the button pressed is correct and add the appropriate class while checking for win.
     handleInteraction(button){
         button.disabled = true;
         if(!this.activePhrase.checkLetter(button.textContent)){
@@ -52,7 +53,7 @@ class Game{
             }
         }
     }
-
+    //Replace the heart with the lostheart image and check if the game is over
     removeLife(){
         this.missed++;
         const $lostHeart = $('#scoreboard img[src="images/liveHeart.png"]:last');
@@ -63,7 +64,7 @@ class Game{
         }
         
     }
-
+    //Check for win by checking if there is any 'hide' class inside the phrase
     checkForWin(){
         const $hidenLetters = $('#phrase .hide');
         if($hidenLetters.length === 0){
@@ -71,7 +72,7 @@ class Game{
         }
             return false;
     }
-
+    //Show the overlay and display a message depending on whether the player has won the game or not
     gameOver(isWon){
         
         const message = document.getElementById('game-over-message');

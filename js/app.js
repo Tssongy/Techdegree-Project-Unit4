@@ -5,6 +5,7 @@
  let newGame;
  const $startButton = $('#btn__reset');
  const $keyButtons = $('.key');
+ 
  $startButton.on('click', function(){
     newGame = new Game()
     newGame.startGame();
